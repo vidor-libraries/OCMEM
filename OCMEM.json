@@ -1,0 +1,57 @@
+{
+  "module":{
+   "name":"altera_avalon_onchip_memory2",
+   "version":"18.1",
+   "parameters":[
+     {"name":"allowInSystemMemoryContentEditor", "def":"false"},
+     {"name":"autoInitializationFileName", "def":"MKRVIDOR4000_peripherals_sys_dpram"},
+     {"name":"blockType", "def":"AUTO"},
+     {"name":"copyInitFile", "def":"false"},
+     {"name":"dataWidth", "def":"32"},
+     {"name":"dataWidth2", "def":"32"},
+     {"name":"deviceFamily", "def":"Cyclone 10 LP"},
+     {"name":"dualPort", "def":"true"},
+     {"name":"ecc_enabled", "def":"false"},
+     {"name":"enPRInitMode", "def":"false"},
+     {"name":"enableDiffWidth", "def":"false"},
+     {"name":"initMemContent", "def":"true"},
+     {"name":"initializationFileName", "def":"onchip_mem.hex"},
+     {"name":"instanceID", "def":"NONE"},
+     {"name":"memorySize", "def":"1024"},
+     {"name":"readDuringWriteMode", "def":"DONT_CARE"},
+     {"name":"resetrequest_enabled", "def":"true"},
+     {"name":"simAllowMRAMContentsFile", "def":"false"},
+     {"name":"simMemInitOnlyFilename", "def":"0"},
+     {"name":"singleClockOperation", "def":"true"},
+     {"name":"slave1Latency", "def":"1"},
+     {"name":"slave2Latency", "def":"1"},
+     {"name":"useNonDefaultInitFile", "def":"false"},
+     {"name":"useShallowMemBlocks", "def":"false"},
+     {"name":"writable", "def":"true"}
+    ]
+  },
+  "hw":[
+    {
+      "interface":"avalon_slave",
+      "name":"s1",
+      "parameters":[
+        {"signal":"clock", "name":"clock", "value":"clk1"},
+        {"signal":"reset", "name":"reset", "value":"reset1"},
+        {"signal":"address", "name":"SPAN", "value":"8"},
+        {"signal":"read_data", "name":"BIT_WIDTH", "value":"32"},
+        {"signal":"write_data", "name":"BIT_WIDTH", "value":"32"}
+      ]
+    },
+    {
+      "interface":"avalon_slave",
+      "name":"s2",
+      "parameters":[
+        {"signal":"clock", "name":"clock", "value":"clk1"},
+        {"signal":"reset", "name":"reset", "value":"reset1"},
+        {"signal":"address", "name":"SPAN", "value":"8"},
+        {"signal":"read_data", "name":"BIT_WIDTH", "value":"32"},
+        {"signal":"write_data", "name":"BIT_WIDTH", "value":"32"}
+      ]
+    }
+  ]
+}
